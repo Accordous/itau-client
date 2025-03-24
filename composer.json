@@ -1,0 +1,47 @@
+{
+    "name": "accordous/itau-client",
+    "description": "Itau API Client for Laravel",
+    "type": "library",
+    "version": "1.0.0",
+    "authors": [
+        {
+            "name": "Rafael Iga",
+            "email": "rafael.iga@accordous.com.br"
+        }
+    ],
+    "require": {
+        "php": "^8.2",
+        "illuminate/support": "^10.0|^11.0",
+        "illuminate/cache": "^10.0|^11.0",
+        "illuminate/http": "^10.0|^11.0"
+    },
+    "require-dev": {
+        "orchestra/testbench": "^8.0|^9.0",
+        "phpunit/phpunit": "^10.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "Itau\\": "src/Itau/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Itau\\Tests\\": "tests/"
+        }
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Itau\\ItauServiceProvider"
+            ],
+            "aliases": {
+                "Itau": "Itau\\Facades\\Itau"
+            }
+        }
+    },
+    "scripts": {
+        "test": "vendor/bin/phpunit"
+    },
+    "minimum-stability": "dev",
+    "prefer-stable": true
+}
