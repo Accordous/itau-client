@@ -10,8 +10,9 @@ return [
     |
     */
 
-    // API Base URL
+    // API Base URLs
     'base_url' => env('ITAU_API_BASE_URL', 'https://sandbox.devportal.itau.com.br'),
+    'boletos_url' => env('ITAU_API_BOLETOS_URL', '/itau-ep9-gtw-cash-management-ext-v2/v2'),
     
     // OAuth Credentials
     'client_id' => env('ITAU_CLIENT_ID', ''),

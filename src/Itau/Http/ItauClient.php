@@ -70,15 +70,15 @@ class ItauClient
     public function registrarBoletoCobranca(array $data)
     {
         $token = $this->getToken();
-        
+
         $headers = [
-            'Authorization' => 'Bearer ' . $token,
+            'Authorization' => $token,
             'Content-Type' => 'application/json',
         ];
-        
+
         $response = Http::withHeaders($headers)
             ->timeout($this->config['timeout'])
-            ->post($this->config['base_url'] . '/itau-ep9-gtw-cash-management-ext-v2/v2', $data);
+            ->post($this->config['base_url'] . $this->config['boletos_url'] . '/boletos', $data);
         
         $response->throw();
         
